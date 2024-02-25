@@ -13,16 +13,16 @@ function NavBar() {
                         src="./images/isologo.png"
                         width="60"
                         height="60"
-                        className="d-inline-block align-middle me-2"
+                        className="d-inline-block align-middle m-0 img-fluid"
                         alt="Bunnabis logo"
                     />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="ms-5">
-                        <Nav.Link className="me-3" href="#home">Mas vendidos</Nav.Link>
-                        <Nav.Link className="me-3" href="#link">Novedades</Nav.Link>
-                        <NavDropdown className="me-3" title="Productos" id="basic-nav-dropdown">
+                    <Nav>
+                        <Nav.Link className="ms-5" href="#home">Mas vendidos</Nav.Link>
+                        <Nav.Link className="ms-3" href="#link">Novedades</Nav.Link>
+                        <NavDropdown className="ms-3" title="Productos" id="basic-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">Aceites</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">Cosmética Natural</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.3">Fungi</NavDropdown.Item>

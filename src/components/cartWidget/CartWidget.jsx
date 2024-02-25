@@ -1,10 +1,11 @@
 import {TiShoppingCart} from "react-icons/ti";
 import Badge from 'react-bootstrap/Badge';
+import './cartwidget.css'
 
 const CartWidget = ({counter}) => {
     return (
-        <div className="ms-5">
-            <TiShoppingCart className="ms-5" fontSize= {'1.6rem'}/>
+        <div className='ms-auto'>
+            <TiShoppingCart fontSize= {'1.6rem'}/>
             <Badge bg='success'>{counter}</Badge>
         </div>
     )
