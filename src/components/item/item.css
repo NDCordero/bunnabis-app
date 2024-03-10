@@ -4,6 +4,9 @@
 
 .card {
     margin: 1rem;
-    width: 18rem;
+    width: 14rem;
 }
 
+.card p{
+   font-size: small;
+}
