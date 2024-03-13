@@ -8,12 +8,12 @@ const ItemDetail = ({ producto }) => {
 
         <div className="container">
             <div  className="producto-detalle">
-                <img className="card-img-top" src={producto.image} alt={producto.name} />
+                <img src={producto.image} alt={producto.name} />
                 <div>
-                    <h5 className="card-title">{producto.name}</h5>
+                    <h5>{producto.name}</h5>
                     <p>Categoría: {producto.category}</p>
                     <p>Precio:
-                        ${producto.price},00</p>
+                        ${producto.price}</p>
                     <p>{producto.description}</p>
                     <ItemCount stock={producto.stock} />
                 </div>

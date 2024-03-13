@@ -5,7 +5,7 @@ import './cartwidget.css'
 const CartWidget = ({counter}) => {
     return (
         <div className='ms-auto'>
-            <TiShoppingCart fontSize= {'1.6rem'}/>
+            <TiShoppingCart className="carrito"/>
             <Badge bg='success'>{counter}</Badge>
         </div>
     )

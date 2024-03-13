@@ -21,7 +21,8 @@ function NavBar() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav>
-                        <Nav.Link className="ms-3" as={NavLink} to='/'>Home</Nav.Link>
+                        <Nav.Link className="ms-3" as={NavLink} to='/'>Inicio</Nav.Link>
+                        <Nav.Link className="ms-3" as={NavLink} to='/nosotros'>Nosotros</Nav.Link>
                         <NavDropdown className="ms-3" title="Categorias" id="basic-nav-dropdown">
                             <NavDropdown.Item as={NavLink} to='/categories/aceites'>Aceites</NavDropdown.Item>
                             <NavDropdown.Item as={NavLink} to='/categories/cosmetica natural'>Cosmética Natural</NavDropdown.Item>
@@ -30,8 +31,10 @@ function NavBar() {
                         </NavDropdown>
                         <Nav.Link className="ms-3" as={NavLink} to='/categories/novedades'>Novedades</Nav.Link>
                         <Nav.Link className="ms-3" as={NavLink} to='/categories/ofertas'>Ofertas</Nav.Link>
+                        <NavLink className="ms-3" to='/carrito'>
+                            <CartWidget counter={10}/>
+                        </NavLink>
                     </Nav>
-                    <CartWidget counter={10} />
                 </Navbar.Collapse>
             </Container>
         </Navbar>

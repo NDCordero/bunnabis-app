@@ -1,14 +1,17 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { getProducts } from '../../mock/fakeApi'
+import { getProducts } from '../../mock/data'
 import ItemList from '../itemList/ItemList'
 import { useParams } from 'react-router-dom'
 
 const ItemListContainer = ({ greeting }) => {
   const [productos, setProductos] = useState([])
+  const [error, setError] = useState(false)
+  const [loading, setLoading] = useState(false)
   const { categoryId } = useParams()
 
   useEffect(() => {
+    setLoading(true)
     getProducts()
       .then((res) => {
         if (categoryId) {
@@ -17,15 +20,22 @@ const ItemListContainer = ({ greeting }) => {
           setProductos(res)
         }
       })
-      .catch((error) => console.log(error, 'todo mal'))
+      .catch((error) => setError(error))
+      .finally(() => setLoading(false))
   }, [categoryId])
+
+  if (loading) {
+    return <h4 className='m-3 text-success'>Cargando...</h4>
+  }
+
+  if (error) {
+    return <h4 className='m-3 text-success'>Hubo un problema, por favor intente mas tarde</h4
+    >
+  }
 
   return (
     <div>
-      {/* {categoryId ? <h1 className='m-3 text-success'>{greeting} <span style={{ color: 'success' }}>{categoryId}</span></h1> :
-        <h1 className='m-3 text-success'>{greeting}</h1>} */}
-
-      <h1 className='m-3 text-success'>{greeting}</h1>
+      <h2 className='m-3 text-success'>{greeting}</h2>
       <ItemList productos={productos} />
     </div>
   )
