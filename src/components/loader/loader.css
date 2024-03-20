@@ -1,0 +1,12 @@
+.loader{
+    display:flex; 
+    justify-Content:center; 
+    align-Items:center; 
+    flex-Direction:column;
+}
+
+.imgloader{
+    width: 30%;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}

@@ -23,15 +23,15 @@ function NavBar() {
                     <Nav>
                         <Nav.Link className="ms-3" as={NavLink} to='/'>Inicio</Nav.Link>
                         <Nav.Link className="ms-3" as={NavLink} to='/nosotros'>Nosotros</Nav.Link>
-                        <NavDropdown className="ms-3" title="Categorias" id="basic-nav-dropdown">
+                        <NavDropdown className="ms-3" title="Productos" id="basic-nav-dropdown">
                             <NavDropdown.Item as={NavLink} to='/categories/aceites'>Aceites</NavDropdown.Item>
                             <NavDropdown.Item as={NavLink} to='/categories/cosmetica natural'>Cosmética Natural</NavDropdown.Item>
                             <NavDropdown.Item as={NavLink} to='/categories/fungi'>Fungi</NavDropdown.Item>
                             <NavDropdown.Item as={NavLink} to='/categories/otros'>Otros</NavDropdown.Item>
                         </NavDropdown>
                         <Nav.Link className="ms-3" as={NavLink} to='/categories/novedades'>Novedades</Nav.Link>
-                        <Nav.Link className="ms-3" as={NavLink} to='/categories/ofertas'>Ofertas</Nav.Link>
-                        <NavLink className="ms-3" to='/carrito'>
+                        <Nav.Link className="ms-3" as={NavLink} to='/form'>Contacto</Nav.Link>
+                        <NavLink className="ms-3" to='/cart'>
                             <CartWidget counter={10}/>
                         </NavLink>
                     </Nav>

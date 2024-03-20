@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { getProducts } from '../../mock/data'
 import ItemDetail from '../itemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
+import Loader from '../loader/Loader'
 
 
 const ItemDetailContainer = () => {
@@ -18,7 +19,7 @@ const ItemDetailContainer = () => {
     },[])
 
     if(loading){
-      return <h4 className='m-3 text-success'>Cargando detalle...</h4>
+      return <Loader/>
   }  
 
   return (

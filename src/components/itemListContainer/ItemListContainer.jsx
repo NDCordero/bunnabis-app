@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { getProducts } from '../../mock/data'
 import ItemList from '../itemList/ItemList'
 import { useParams } from 'react-router-dom'
+import Loader from '../loader/Loader'
 
 const ItemListContainer = ({ greeting }) => {
   const [productos, setProductos] = useState([])
@@ -25,7 +26,8 @@ const ItemListContainer = ({ greeting }) => {
   }, [categoryId])
 
   if (loading) {
-    return <h4 className='m-3 text-success'>Cargando...</h4>
+
+    return <Loader/>
   }
 
   if (error) {

@@ -2,13 +2,10 @@ import React from 'react'
 import { useState } from 'react'
 
 
-const ItemCount = ({ stock }) => {
+const ItemCount = ({ stock, onAdd }) => {
     const [count, setCount] = useState(1)
 
-    const onAdd = () => {
-        console.log('Compraste un producto')
-    }
-
+   
     const sumar = () => {
         if (count < stock) {
             setCount(count + 1)
@@ -29,7 +26,7 @@ const ItemCount = ({ stock }) => {
                 <button className="btn btn-success" onClick={sumar}>+</button>
             </div>
             <br/>
-            <button className="btn btn-success" disabled={stock === 0 || count === 0} onClick={onAdd}>Comprar</button>
+            <button className="btn btn-success" disabled={stock === 0 || count === 0} onClick={()=> onAdd(count)}>Agregar al carrito</button>
         </>
     )
 }
