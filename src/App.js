@@ -9,6 +9,8 @@ import Footer from './components/footer/Footer'
 import Form from './components/form/Form'
 import { CartProvider } from './context/CartContext';
 
+
+
 function App() {
   return (
     <CartProvider>

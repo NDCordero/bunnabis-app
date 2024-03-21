@@ -14,3 +14,21 @@
 .producto-detalle img {
     width: 90%;
 }
+
+.toast-container {
+    width: 300px;
+    max-width: 80%;
+    min-width: 200px;
+    font-size: 14px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    text-overflow: ellipsis;
+}
+
+.toast-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+}

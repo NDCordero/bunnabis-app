@@ -2,7 +2,7 @@ const productos = [
     {
         id: '1',
         name: 'Aceite Relajación Corporal',
-        stock: 10,
+        stock: 4,
         price: 14000,
         description: 'Este aceite, compuesto principalmente por delta-9-Tetrahydrocannabinol en estado acido THCa, es decir sin descarboxilar es un aceite especial para los dolores musculares y articulares.',
         image: '../images/aceitecorporal.jpg',

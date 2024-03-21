@@ -1,0 +1,24 @@
+.carrito-compras {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-content: space-around;
+    align-Items: center;
+    padding: 0.6rem;
+    width: 90%;
+    margin-left: 3rem;
+}
+
+.carrito-compras img{
+    width: 5rem;
+}
+
+.btn-eliminar {
+    cursor: default;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .btn-eliminar:hover {
+    cursor: pointer;
+    transform: scale(1.3);
+    color: red;
+  }
