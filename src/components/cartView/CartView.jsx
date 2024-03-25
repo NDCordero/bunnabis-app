@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { CartContext } from '../../context/CartContext'
 import { BsTrash } from "react-icons/bs";
+import { NavLink } from 'react-router-dom';
 import './cartView.css'
 
 const CartView = () => {
@@ -18,14 +19,17 @@ const CartView = () => {
                             <span>Unidades: {compra.quantity}</span>
                             <span>${compra.price}</span>
                             <span>Total: ${compra.price * compra.quantity}</span>
-                            <BsTrash className='btn-eliminar' onClick={()=> removeItem(compra.id)}/>
+                            <BsTrash className='btn-eliminar' onClick={() => removeItem(compra.id)} />
                         </div>
                     )
 
                 })}
             </div>
             <p className='ms-5 mt-5'>TOTAL A PAGAR: ${cartPriceTotal()} </p>
-            <button className='btn btn-danger ms-5' onClick={clear}>Vaciar el carrito</button>
+            <NavLink to="/" className="btn btn-success ms-3">
+                Seguir Comprando
+            </NavLink>
+            <button className='btn btn-danger ms-2' onClick={clear}>Vaciar el carrito</button>
         </div>
 
     )

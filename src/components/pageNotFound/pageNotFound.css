@@ -1,12 +1,12 @@
-.loader{
+.error404{
     display:flex; 
     justify-Content:center; 
     align-Items:center; 
     flex-Direction:column;
 }
 
-.imgloader{
-    width: 25rem;
+.error404 img{
+    width: 40%;
     margin-top: 3rem;
     margin-bottom: 2rem;
 }

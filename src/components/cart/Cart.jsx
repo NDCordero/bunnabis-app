@@ -7,7 +7,7 @@ const Cart = () => {
   const { cart } = useContext(CartContext)
 
   return (
-    <div>
+    <div className='ajuste-footer'>
       {!cart.length ?
         <div>
           <h3 className='mt-4 mb-5 ms-3 text-success'>Tu carrito esta vacío!</h3>

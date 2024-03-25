@@ -1,29 +1,46 @@
 import React, { useEffect, useState } from 'react'
-import { getProducts } from '../../mock/data'
 import ItemDetail from '../itemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
 import Loader from '../loader/Loader'
+import { collection, doc, getDoc } from 'firebase/firestore'
+import { db } from '../../services/firebase'
+import '../../cssGlobal.css'
 
 
 const ItemDetailContainer = () => {
     const [producto, setProducto] = useState({})
     const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(false)
     const {itemId} = useParams()
 
-    useEffect(()=> {
+    useEffect(()=>{
       setLoading(true)
-        getProducts()
-        .then((res)=> setProducto(res.find((item)=> item.id === itemId)))
-        .catch((error)=> console.log(error))
-        .finally(()=> setLoading(false))
-    },[])
+      const collectionProd = collection(db, 'productos')
+      const referenciaDoc = doc(collectionProd, itemId)
+      getDoc(referenciaDoc)
+      .then((res)=> setProducto({id:res.id, ...res.data()}))
+      .catch((error) => {
+        setError(true);
+        console.error(error);
+      })
+      .finally(()=> setLoading(false))
+
+    }, [itemId])
+
 
     if(loading){
       return <Loader/>
   }  
 
+  if (error) {
+    return <div className='ajuste-footer m-3 mt-5 text-danger'>
+      <h5>
+    ⚠Error al cargar el producto⚠</h5><p>Por favor, intente nuevamente mas tarde.</p>
+    </div>
+  }
+
   return (
-    <div>
+    <div className='ajuste-footer'>
         <ItemDetail producto={producto}/>
     </div>
   )

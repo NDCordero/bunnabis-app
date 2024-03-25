@@ -1,9 +1,11 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { getProducts } from '../../mock/data'
 import ItemList from '../itemList/ItemList'
 import { useParams } from 'react-router-dom'
 import Loader from '../loader/Loader'
+import { collection, getDocs, query, where } from 'firebase/firestore'
+import { db } from '../../services/firebase'
+import '../../cssGlobal.css'
 
 const ItemListContainer = ({ greeting }) => {
   const [productos, setProductos] = useState([])
@@ -11,19 +13,29 @@ const ItemListContainer = ({ greeting }) => {
   const [loading, setLoading] = useState(false)
   const { categoryId } = useParams()
 
-  useEffect(() => {
+
+  useEffect(()=> {
     setLoading(true)
-    getProducts()
-      .then((res) => {
-        if (categoryId) {
-          setProductos(res.filter((prod) => prod.category === categoryId))
-        } else {
-          setProductos(res)
+
+    const productsCollection = categoryId ? query(collection(db, "productos"), where('category', '==', categoryId)) : collection(db, "productos")
+    getDocs(productsCollection)
+    .then((res)=>{
+      const list = res.docs.map((product)=>{
+        return{
+          id:product.id,
+          ...product.data()
         }
       })
-      .catch((error) => setError(error))
-      .finally(() => setLoading(false))
+        setProductos(list)
+    })
+    .catch((error) => {
+      setError(true);
+      console.error(error);
+    })
+    .finally(()=> setLoading(false))
   }, [categoryId])
+
+
 
   if (loading) {
 
@@ -31,12 +43,14 @@ const ItemListContainer = ({ greeting }) => {
   }
 
   if (error) {
-    return <h4 className='m-3 text-success'>Hubo un problema, por favor intente mas tarde</h4
-    >
+    return <div className='ajuste-footer m-3 mt-5 text-danger'>
+      <h5>
+    ⚠Error al cargar los productos⚠</h5><p>Por favor, intente nuevamente mas tarde.</p>
+    </div>
   }
 
   return (
-    <div>
+    <div className='ajuste-footer'>
       <h2 className='m-3 text-success'>{greeting}</h2>
       <ItemList productos={productos} />
     </div>

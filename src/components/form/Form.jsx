@@ -9,9 +9,9 @@ const Form = () => {
     }
 
     return (
-        <div>
+        <div className='ajuste-footer'>
 
-            <h4 className='m-3 mb-5 text-success'>Formulario de contacto</h4>
+            <h3 className='m-3 mb-5 text-success'>Formulario de contacto</h3>
 
             <form className='d-flex justify-content-center flex-column align-items-start m-3' onSubmit={handleSubmit(enviar)}>
                 <input className='mb-2' type='text' placeholder='Nombre Completo' {...register("Nombre Completo")} />
