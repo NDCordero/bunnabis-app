@@ -11,7 +11,7 @@ function NavBar() {
         <Navbar expand="lg" className="bg-body-tertiary">
             <Container>
                 <Navbar.Brand as={NavLink} to='/'>
-                    <img src="./images/isologo.png" className="d-inline-block align-middle m-0 img-fluid imagen-nav" alt="Bunnabis logo" />
+                    <img src="../images/isologo.png" className="d-inline-block align-middle m-0 img-fluid imagen-nav" alt="Bunnabis logo" />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
