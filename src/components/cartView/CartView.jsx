@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { CartContext } from '../../context/CartContext'
 import { BsTrash } from "react-icons/bs";
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './cartView.css'
 
 const CartView = () => {
@@ -9,7 +9,7 @@ const CartView = () => {
 
     return (
         <div>
-            <h3 className='text-success m-3'>Carrito de compras</h3>
+            <h3 className='text-success m-3 mt-5'>Carrito de compras</h3>
             <div>
                 {cart.map((compra) => {
                     return (
@@ -25,11 +25,12 @@ const CartView = () => {
 
                 })}
             </div>
-            <p className='ms-5 mt-5'>TOTAL A PAGAR: ${cartPriceTotal()} </p>
-            <NavLink to="/" className="btn btn-success ms-3">
-                Seguir Comprando
-            </NavLink>
-            <button className='btn btn-danger ms-2' onClick={clear}>Vaciar el carrito</button>
+            <h5 className='ms-5 mt-5 mb-3'>TOTAL A PAGAR: ${cartPriceTotal()} </h5>
+            <div>
+                <Link to="/" className="btn btn-success ms-3">Seguir Comprando</Link>
+                <button className='btn btn-danger ms-2' onClick={clear}>Vaciar el carrito</button>
+            </div>
+            <Link to="/checkout" className="btn-finalizar btn btn-success ms-3 mt-2">Finalizar compra</Link>
         </div>
 
     )

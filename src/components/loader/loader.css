@@ -1,11 +1,11 @@
-.loader{
-    display:flex; 
-    justify-Content:center; 
-    align-Items:center; 
-    flex-Direction:column;
+.loader {
+    display: flex;
+    justify-Content: center;
+    align-Items: center;
+    flex-Direction: column;
 }
 
-.imgloader{
+.imgloader {
     width: 25rem;
     margin-top: 3rem;
     margin-bottom: 2rem;

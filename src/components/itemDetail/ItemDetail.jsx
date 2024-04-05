@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import ItemCount from '../itemCount/ItemCount';
 import { CartContext } from '../../context/CartContext';
 import './itemDetail.css';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -10,7 +10,7 @@ const ToastComponent = ({ message }) => {
   return (
     <div className="toast-container">
       <div className="toast-content">
-      {message}
+        {message}
       </div>
     </div>
   );
@@ -19,7 +19,7 @@ const ToastComponent = ({ message }) => {
 const ItemDetail = ({ producto }) => {
 
   const [compra, setCompra] = useState(false);
-  const { addItem } = useContext(CartContext);
+  const { addItem, itemQuantity } = useContext(CartContext);
 
   const onAdd = (cantidad) => {
     addItem(producto, cantidad);
@@ -30,6 +30,8 @@ const ItemDetail = ({ producto }) => {
     });
   };
 
+  const stockInCart = itemQuantity(producto.id)
+
   return (
     <div className="container">
       <div className="producto-detalle">
@@ -39,18 +41,18 @@ const ItemDetail = ({ producto }) => {
           <p>Categoría: {producto.category}</p>
           <p>Precio: ${producto.price}</p>
           <p>{producto.description}</p>
-          
+
           {compra ? (
             <div>
-               <NavLink to="/" className="btn btn-success">
+              <Link to="/" className="btn btn-success mb-2">
                 Seguir Comprando
-              </NavLink>
-              <NavLink to="/cart" className="btn btn-success ms-2">
+              </Link>
+              <Link to="/cart" className="btn btn-success ms-2 mb-2">
                 Ir al Carrito
-              </NavLink>
+              </Link>
             </div>
           ) : (
-            <ItemCount stock={producto.stock} onAdd={onAdd} />
+            <ItemCount stock={producto.stock - stockInCart} onAdd={onAdd} />
           )}
         </div>
       </div>

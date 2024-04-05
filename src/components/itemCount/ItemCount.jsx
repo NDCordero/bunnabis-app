@@ -5,7 +5,7 @@ import { useState } from 'react'
 const ItemCount = ({ stock, onAdd }) => {
     const [count, setCount] = useState(1)
 
-   
+
     const sumar = () => {
         if (count < stock) {
             setCount(count + 1)
@@ -25,8 +25,8 @@ const ItemCount = ({ stock, onAdd }) => {
                 <span className="btn">{count}</span>
                 <button className="btn btn-success" onClick={sumar}>+</button>
             </div>
-            <br/>
-            <button className="btn btn-success" disabled={stock === 0 || count === 0} onClick={()=> onAdd(count)}>Agregar al carrito</button>
+            <br />
+            <button className="btn btn-success" disabled={stock === 0 || count === 0} onClick={() => onAdd(count)}>Agregar al carrito</button>
         </>
     )
 }

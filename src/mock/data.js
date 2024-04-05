@@ -1,6 +1,5 @@
 const productos = [
     {
-        id: '1',
         name: 'Aceite Relajación Corporal',
         stock: 4,
         price: 14000,
@@ -9,7 +8,6 @@ const productos = [
         category: 'aceites'
     },
     {
-        id: '2',
         name: 'Aceite Relajación Mental',
         stock: 10,
         price: 14000,
@@ -18,7 +16,6 @@ const productos = [
         category: 'aceites'
     },
     {
-        id: '3',
         name: 'Aceite Equilibrio',
         stock: 10,
         price: 14000,
@@ -27,7 +24,6 @@ const productos = [
         category: 'aceites'
     },
     {
-        id: '4',
         name: 'Jabones',
         stock: 10,
         price: 1000,
@@ -36,7 +32,6 @@ const productos = [
         category: 'cosmetica natural'
     },
     {
-        id: '5',
         name: 'Ungüento corporal',
         stock: 10,
         price: 10000,
@@ -45,7 +40,6 @@ const productos = [
         category: 'cosmetica natural'
     },
     {
-        id: '6',
         name: 'Crema de Cannabis y Lavanda',
         stock: 10,
         price: 10000,
@@ -54,7 +48,6 @@ const productos = [
         category: 'cosmetica natural'
     },
     {
-        id: '7',
         name: 'Bálsamo Labial de Calendula',
         stock: 10,
         price: 3000,
@@ -63,7 +56,6 @@ const productos = [
         category: 'cosmetica natural'
     },
     {
-        id: '8',
         name: 'Roll On',
         stock: 10,
         price: 3000,
@@ -72,7 +64,6 @@ const productos = [
         category: 'cosmetica natural'
     },
     {
-        id: '9',
         name: 'Repelente',
         stock: 10,
         price: 4000,
@@ -81,7 +72,6 @@ const productos = [
         category: 'otros'
     },
     {
-        id: '10',
         name: 'BTI',
         stock: 10,
         price: 4000,
@@ -90,7 +80,6 @@ const productos = [
         category: 'otros'
     },
     {
-        id: '11',
         name: 'Capsulas de hongos',
         stock: 10,
         price: 10000,
@@ -99,7 +88,6 @@ const productos = [
         category: 'fungi'
     },
     {
-        id: '12',
         name: 'Pasta dental',
         stock: 10,
         price: 10000,
@@ -107,9 +95,9 @@ const productos = [
         image: '../images/comodin2.jpg',
         category: 'cosmetica natural'
     }
-    
 
-    
+
+
 ]
 
 export const getProducts = () => {

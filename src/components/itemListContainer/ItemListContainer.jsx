@@ -14,44 +14,44 @@ const ItemListContainer = ({ greeting }) => {
   const { categoryId } = useParams()
 
 
-  useEffect(()=> {
+  useEffect(() => {
     setLoading(true)
 
     const productsCollection = categoryId ? query(collection(db, "productos"), where('category', '==', categoryId)) : collection(db, "productos")
     getDocs(productsCollection)
-    .then((res)=>{
-      const list = res.docs.map((product)=>{
-        return{
-          id:product.id,
-          ...product.data()
-        }
-      })
+      .then((res) => {
+        const list = res.docs.map((product) => {
+          return {
+            id: product.id,
+            ...product.data()
+          }
+        })
         setProductos(list)
-    })
-    .catch((error) => {
-      setError(true);
-      console.error(error);
-    })
-    .finally(()=> setLoading(false))
+      })
+      .catch((error) => {
+        setError(true);
+        console.error(error);
+      })
+      .finally(() => setLoading(false))
   }, [categoryId])
 
 
 
   if (loading) {
 
-    return <Loader/>
+    return <Loader />
   }
 
   if (error) {
     return <div className='ajuste-footer m-3 mt-5 text-danger'>
       <h5>
-    ⚠Error al cargar los productos⚠</h5><p>Por favor, intente nuevamente mas tarde.</p>
+        ⚠Error al cargar los productos⚠</h5><p>Por favor, intente nuevamente mas tarde.</p>
     </div>
   }
 
   return (
     <div className='ajuste-footer'>
-      <h2 className='m-3 text-success'>{greeting}</h2>
+      <h2 className='m-3 mt-4 mb-4 text-success'>{greeting}</h2>
       <ItemList productos={productos} />
     </div>
   )

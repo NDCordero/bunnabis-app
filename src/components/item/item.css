@@ -8,10 +8,10 @@
     height: 26rem;
 }
 
-.card p{
-   font-size: small;
+.card p {
+    font-size: small;
 }
 
-.card-shadow{
+.card-shadow {
     box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.15)
-} 
+}
