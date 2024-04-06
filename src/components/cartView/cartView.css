@@ -28,7 +28,18 @@
 }
 
 @media (max-width: 768px) {
-  .carrito-compras{
+  .carrito-compras {
     font-size: small;
+    margin-left: 1rem;
   }
+
+  .carrito-compras img {
+    margin-right: 1rem;
   }
+}
+
+@media (max-width: 480px) {
+  .carrito-compras {
+    font-size:x-small;
+  }
+}
