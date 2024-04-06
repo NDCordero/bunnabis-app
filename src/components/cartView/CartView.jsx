@@ -25,9 +25,9 @@ const CartView = () => {
 
                 })}
             </div>
-            <h5 className='ms-5 mt-5 mb-3'>
+            <h6 className='ms-5 mt-5 mb-3'>
                 <span className="fw-bold">TOTAL:</span> ${cartPriceTotal()}
-            </h5>
+            </h6>
             <div>
                 <Link to="/" className="btn btn-success ms-3">Seguir Comprando</Link>
                 <button className='btn btn-danger ms-2' onClick={clear}>Vaciar el carrito</button>
