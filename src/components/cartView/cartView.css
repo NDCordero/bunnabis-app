@@ -26,3 +26,9 @@
 .btn-finalizar {
   width: 19rem;
 }
+
+@media (max-width: 768px) {
+  .carrito-compras{
+    font-size: small;
+  }
+  }

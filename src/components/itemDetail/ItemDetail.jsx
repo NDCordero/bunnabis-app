@@ -38,7 +38,7 @@ const ItemDetail = ({ producto }) => {
         <img src={producto.image} alt={producto.name} />
         <div>
           <h5>{producto.name}</h5>
-          <p>Categoría: {producto.category}</p>
+          <p className="text-capitalize">Categoría: {producto.category}</p>
           <p>Precio: ${producto.price}</p>
           <p>{producto.description}</p>
 

@@ -9,7 +9,7 @@ const CartView = () => {
 
     return (
         <div>
-            <h3 className='text-success m-3 mt-5'>Carrito de compras</h3>
+            <h3 className='text-success m-3 mt-5'>Estado de tu compra</h3>
             <div>
                 {cart.map((compra) => {
                     return (
@@ -18,14 +18,16 @@ const CartView = () => {
                             <span className='text-uppercase fst-italic'>{compra.name}</span>
                             <span>Unidades: {compra.quantity}</span>
                             <span>${compra.price}</span>
-                            <span>Total: ${compra.price * compra.quantity}</span>
+                            <span>Subtotal: ${compra.price * compra.quantity}</span>
                             <BsTrash className='btn-eliminar' onClick={() => removeItem(compra.id)} />
                         </div>
                     )
 
                 })}
             </div>
-            <h5 className='ms-5 mt-5 mb-3'>TOTAL A PAGAR: ${cartPriceTotal()} </h5>
+            <h5 className='ms-5 mt-5 mb-3'>
+                <span className="fw-bold">TOTAL:</span> ${cartPriceTotal()}
+            </h5>
             <div>
                 <Link to="/" className="btn btn-success ms-3">Seguir Comprando</Link>
                 <button className='btn btn-danger ms-2' onClick={clear}>Vaciar el carrito</button>
