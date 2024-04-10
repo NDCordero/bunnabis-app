@@ -16,7 +16,7 @@ const CartView = () => {
                         <div className='carrito-compras border-bottom' key={compra.id}>
                             <img src={compra.image} alt={compra.name} />
                             <span className='text-uppercase fst-italic'>{compra.name}</span>
-                            <span>Unidades: {compra.quantity}</span>
+                            <span>Cant: {compra.quantity}</span>
                             <span>${compra.price}</span>
                             <span>Subtotal: ${compra.price * compra.quantity}</span>
                             <BsTrash className='btn-eliminar' onClick={() => removeItem(compra.id)} />
