@@ -32,3 +32,15 @@
     justify-content: center;
 
 }
+
+@media (max-width: 480px) {
+    .producto-detalle {
+        grid-template-columns: 1fr;
+      }
+    
+      .producto-detalle img {
+        width: 80%;
+        order: -1;
+      }
+  }
+
