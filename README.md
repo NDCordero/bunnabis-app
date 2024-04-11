@@ -6,6 +6,9 @@ Este proyecto es un e-commerce para comprar productos orgánicos y naturales, pr
 
 ![ecommerce](https://i.postimg.cc/bYWHMcqN/Captura-de-pantalla-2024-04-04-203416.png)
 
+![ecommerce](https://i.postimg.cc/5tGq91Pf/Proyecto-Bunnabis-GIF.gif)
+
+
 ### Instalación 💻
 
 - Clone el repositorio
