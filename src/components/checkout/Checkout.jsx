@@ -21,7 +21,7 @@ const Checkout = () => {
       `
     }, 'xJ5O5HweDcam0Mxft')
       .then(() => {
-        alert('Orden generada con éxito! chequeá tu casilla de correo! ✉');
+        alert('Orden generada con éxito! chequeá tu casilla de correo ✉');
       })
       .catch((error) => {
         console.error('Error al enviar correo electrónico:', error);
