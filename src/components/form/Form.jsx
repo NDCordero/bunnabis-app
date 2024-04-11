@@ -1,43 +1,49 @@
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import React, { useContext, useState } from 'react'
-import { CartContext } from '../../context/CartContext'
-import { addDoc, collection, doc, getDoc, serverTimestamp, updateDoc } from 'firebase/firestore'
-import { db } from '../../services/firebase'
-import { Link } from 'react-router-dom'
+import { CartContext } from '../../context/CartContext';
+import { addDoc, collection, doc, getDoc, serverTimestamp, updateDoc } from 'firebase/firestore';
+import { db } from '../../services/firebase';
+import { Link } from 'react-router-dom';
 
 const Form = ({ onSubmit }) => {
     const { register, handleSubmit, formState: { isDirty, isValid } } = useForm();
-    const [orderId, setOrderId] = useState('')
-    const { cart, cartPriceTotal, clear } = useContext(CartContext)
+    const [orderId, setOrderId] = useState('');
+    const { cart, cartPriceTotal, clear } = useContext(CartContext);
 
     const finalizarCompra = user => {
-        if (user.Email !== user.Email2) {
-            alert("Los correos electrónicos no coinciden");
+        if (cart.length === 0) {
+            alert("No se puede generar la compra. No hay ningún producto en el carrito!");
             return;
-        } else {
-            let order = {
-                user,
-                items: cart,
-                total: cartPriceTotal(),
-                date: serverTimestamp()
-            }
-            const ventas = collection(db, 'orders')
-
-            addDoc(ventas, order)
-                .then((res) => {
-                    cart.forEach((item) => {
-                        const docRef = doc(db, 'productos', item.id)
-                        getDoc(docRef)
-                            .then((dbDoc) => {
-                                updateDoc(docRef, { stock: dbDoc.data().stock - item.quantity })
-                            })
-                    })
-                    setOrderId(res.id)
-                    clear()
-                    onSubmit(user, cart, cartPriceTotal(), res.id);
-                })
-                .catch((error) => console.log(error))
         }
+
+        if (user.Email !== user.Email2) {
+            alert("Los correos electrónicos no coinciden.");
+            return;
+        }
+
+        let order = {
+            user,
+            items: cart,
+            total: cartPriceTotal(),
+            date: serverTimestamp()
+        }
+
+        const ventas = collection(db, 'orders');
+
+        addDoc(ventas, order)
+            .then((res) => {
+                cart.forEach((item) => {
+                    const docRef = doc(db, 'productos', item.id)
+                    getDoc(docRef)
+                        .then((dbDoc) => {
+                            updateDoc(docRef, { stock: dbDoc.data().stock - item.quantity })
+                        })
+                })
+                setOrderId(res.id)
+                clear()
+                onSubmit(user, cart, cartPriceTotal(), res.id);
+            })
+            .catch((error) => console.log(error));
     };
 
     return (
@@ -63,4 +69,5 @@ const Form = ({ onSubmit }) => {
         </div>
     );
 }
+
 export default Form;

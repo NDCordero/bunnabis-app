@@ -1,6 +1,6 @@
 # Bunnabis e-commerce 🛒
 
-Este proyecto es un e-commerce para comprar productos orgánicos y naturales.
+Este proyecto es un e-commerce para comprar productos orgánicos y naturales, producidos en base a extractos de distintas especies .
 
 ![ecommerce](https://i.postimg.cc/CL8HpPKC/Captura-de-pantalla-2024-04-04-203333.png)
 
@@ -15,7 +15,7 @@ Este proyecto es un e-commerce para comprar productos orgánicos y naturales.
 
 ### Version Host 🛜
 
-[Bunnabis WEB]()
+[Bunnabis WEB](https://bunnabis-app.vercel.app/)
 
 ### Librerias utilizadas 📖
 
