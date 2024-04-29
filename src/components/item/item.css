@@ -5,7 +5,7 @@
 .card {
     margin: 1rem;
     width: 14rem;
-    height: 26rem;
+    height: 29rem;
 }
 
 .card p {
@@ -15,3 +15,15 @@
 .card-shadow {
     box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.15)
 }
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; 
+}
+
+.btn-success {
+    align-self: flex-end; 
+}
+
