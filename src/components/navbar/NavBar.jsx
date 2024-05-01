@@ -24,7 +24,6 @@ function NavBar() {
                             <NavDropdown.Item as={NavLink} to='/categories/fungi'>Fungi</NavDropdown.Item>
                             <NavDropdown.Item as={NavLink} to='/categories/otros'>Otros</NavDropdown.Item>
                         </NavDropdown>
-                        <Nav.Link className="ms-3" as={NavLink} to='/categories/novedades'>Novedades</Nav.Link>
                         <NavLink className="ms-3" to='/cart'>
                             <CartWidget counter={10} />
                         </NavLink>
