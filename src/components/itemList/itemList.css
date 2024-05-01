@@ -3,5 +3,16 @@
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+}
 
+.whatsapp-link {
+    position: fixed;
+    bottom: 25px; 
+    right: 25px; 
+    z-index: 9999; 
+}
+
+.whatsapp-logo {
+    width: 90px; 
+    height: auto; 
 }
