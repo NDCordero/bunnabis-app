@@ -28,6 +28,7 @@ Este proyecto es un e-commerce para comprar productos orgánicos y naturales, pr
 - [React Hook Form](https://react-hook-form.com/): librería para la creación de formularios
 - [React Tostify](https://www.npmjs.com/package/react-toastify): librería para mostrar notificaciones toast
 - [React Icons](https://www.npmjs.com/package/react-icons): librería que nos ofrece una amplia gama de iconos listos para usar
+- [React Whatsapp](https://www.npmjs.com/package/react-whatsapp): librería que nos permite incorporar el botón de Whatsapp para la comunicación con el cliente
 
 
 
