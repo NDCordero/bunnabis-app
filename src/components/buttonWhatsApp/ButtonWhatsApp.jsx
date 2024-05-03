@@ -8,7 +8,7 @@ const WhatsAppButton = () => {
 
     let whatsappLink = `https://api.whatsapp.com/send?phone=${phoneNumber}`;
 
-   
+
     if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
       whatsappLink = `https://web.whatsapp.com/send?phone=${phoneNumber}`;
     }
@@ -19,9 +19,7 @@ const WhatsAppButton = () => {
 
   return (
     <div>
-      <button onClick={handleWhatsAppClick}>
-        <img className='whatsapp-logo whatsapp-link' src="../images/whatsapplogo.png" alt="Contactanos por WhatsApp" />
-      </button>
+      <img onClick={handleWhatsAppClick} className='whatsapp-logo whatsapp-link cursor' src="../images/whatsapplogo.png" alt="Contactanos por WhatsApp" />
     </div>
   );
 };
