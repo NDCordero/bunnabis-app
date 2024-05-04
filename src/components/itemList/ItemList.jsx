@@ -5,8 +5,11 @@ import ButtonWhatsApp from "../buttonWhatsApp/ButtonWhatsApp";
 
 const ItemList = ({ productos }) => {
     return (
-        <div className="item-list">
-            {productos.map((producto) => <Item key={producto.id} producto={producto} />)}
+        <div>
+            <div className="item-list">
+                {productos.map((producto) => <Item key={producto.id} producto={producto} />)}
+
+            </div>
             {<ButtonWhatsApp />}
         </div>
     )
