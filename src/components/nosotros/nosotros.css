@@ -1,0 +1,11 @@
+p{
+    text-align: justify;
+    width: 90%;
+  }
+
+
+@media (max-width: 480px) {
+    p {
+       width: 90%; 
+      }
+   }
